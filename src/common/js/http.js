@@ -75,8 +75,8 @@ export default {
   setDefaults() {
     let authorization = localStorage.getItem('business-token') || sessionStorage.getItem('business-token')
     axios.defaults.headers = {
-      Authorization: authorization,
-      current_type: 'weishang'
+      'Authorization': authorization,
+      'Current-Type': 'weishang'
     }
     axios.defaults.baseURL = BASE_URL.api
   },

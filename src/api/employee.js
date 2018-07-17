@@ -1,4 +1,5 @@
 import http from '../common/js/http'
+import {commonParams} from './config'
 
 export default {
   /**
@@ -8,7 +9,7 @@ export default {
    */
   userList (data) {
     let url = 'api/merchant/user-list'
-    return http.get(url, data)
+    return http.get(url, Object.assign({}, data, commonParams))
   },
   /**
    * 获取员工列表
@@ -17,7 +18,7 @@ export default {
    */
   syncUser () {
     let url = 'api/merchant/sync-user'
-    return http.get(url)
+    return http.get(url, commonParams)
   },
   /**
    * 获取员工列表
@@ -26,7 +27,7 @@ export default {
    */
   createcUser (data) {
     let url = 'api/merchant/create-user'
-    return http.post(url, data)
+    return http.post(url, Object.assign({}, data, commonParams))
   },
   /**
    * 获取员工列表
@@ -35,7 +36,7 @@ export default {
    */
   getUser (data) {
     let url = 'api/merchant/get-user'
-    return http.get(url, data)
+    return http.get(url, Object.assign({}, data, commonParams))
   },
   /**
    * 获取员工列表
@@ -44,7 +45,7 @@ export default {
    */
   updateUser (data) {
     let url = 'api/merchant/update-user'
-    return http.put(url, data)
+    return http.put(url, Object.assign({}, data, commonParams))
   },
   /**
    * 删除员工
@@ -53,7 +54,7 @@ export default {
    */
   deleteUser (data) {
     let url = 'api/merchant/delete-user'
-    return http.delete(url, data)
+    return http.delete(url, Object.assign({}, data, commonParams))
   },
   /**
    * AI雷达开关
@@ -62,7 +63,7 @@ export default {
    */
   aiRadarChange (data) {
     let url = 'api/merchant/ai-radar-change'
-    return http.get(url, data)
+    return http.get(url, Object.assign({}, data, commonParams))
   },
   /**
    * AI雷达开关
@@ -71,6 +72,6 @@ export default {
    */
   bossRadarChange (data) {
     let url = 'api/merchant/boss-radar-change'
-    return http.get(url, data)
+    return http.get(url, Object.assign({}, data, commonParams))
   }
 }
