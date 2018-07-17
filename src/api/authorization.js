@@ -2,6 +2,7 @@
  *merchant开头
  */
 import http from '../common/js/http'
+import {commonParams} from './config'
 
 export default {
   /**
@@ -11,7 +12,7 @@ export default {
    */
   getSuiteist () {
     let url = '/api/merchant/authorization/get-suite-list'
-    return http.get(url)
+    return http.get(url, commonParams)
   },
   /**
    * 开始第三方应用授权
@@ -20,7 +21,7 @@ export default {
    */
   workServer (data) {
     let url = '/api/merchant/authorization/work-server'
-    return http.post(url, data)
+    return http.post(url, Object.assign({}, data, commonParams))
   },
   /**
    * 永久企业授权码绑定
@@ -29,6 +30,6 @@ export default {
    */
   permanentCodeBind (data) {
     let url = '/api/merchant/authorization/permanent-code-bind'
-    return http.post(url, data)
+    return http.post(url, Object.assign({}, data, commonParams))
   }
 }
