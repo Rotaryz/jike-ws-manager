@@ -74,7 +74,10 @@ function requestException(res) {
 export default {
   setDefaults() {
     let authorization = localStorage.getItem('business-token') || sessionStorage.getItem('business-token')
-    axios.defaults.headers.common['Authorization'] = authorization
+    axios.defaults.headers= {
+      Authorization: authorization,
+      current_type: 'weishang'
+    }
     axios.defaults.baseURL = BASE_URL.api
   },
   post(url, data) {
