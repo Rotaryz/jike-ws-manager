@@ -74,7 +74,7 @@ function requestException(res) {
 export default {
   setDefaults() {
     let authorization = localStorage.getItem('business-token') || sessionStorage.getItem('business-token')
-    axios.defaults.headers= {
+    axios.defaults.headers = {
       Authorization: authorization,
       current_type: 'weishang'
     }
