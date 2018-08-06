@@ -70,7 +70,7 @@
           if (res.error === ERR_OK) {
             res = res.data
             let redirectUri = location.origin + '/authorizationDetail'
-            redirectUri = encodeURI(redirectUri)
+            redirectUri = encodeURIComponent(redirectUri)
             let url = ` https://open.work.weixin.qq.com/3rdapp/install?suite_id=${res.suite_id}&pre_auth_code=${res.pre_auth_code}&redirect_uri=${redirectUri}&state=${res.suite_id},${res.corp_id}`
             this._showShade()
             window.open(url)
